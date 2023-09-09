@@ -1,20 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement("h1", {}, "Hello React!");
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "h1 tag"),
-    React.createElement("h2", {}, "h2 tag"),
-  ])
+const middle = <h1>middle react element</h1>;
+
+const Title = () => (
+  <div>
+    <h1>Title Component</h1>
+  </div>
 );
 
-// create element take three parameters
-// 1. tag,
-// 2. attributes
-// 3. children if for multiple children pass it in an array
-root.render(parent);
+const Head = () => (
+  <div>
+    <Title />
+    {Title()}
+    {middle}
+    <h1>Head Component</h1>
+  </div>
+);
+
+root.render(<Head />);
