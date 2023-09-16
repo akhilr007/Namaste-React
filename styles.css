@@ -56,3 +56,12 @@
   transform: scale(1.05);
   cursor: pointer;
 }
+
+.filter-btn {
+  padding: 5px;
+  margin: 15px;
+}
+
+.filter-btn:hover {
+  cursor: pointer;
+}

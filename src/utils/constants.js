@@ -1,58 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnc3_BciLjUaES7Jn-n1fLVR7pS4cvNPyFhtKKwAnySQ&s"
-          alt="food-logo"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const RestaurantCard = (props) => {
-  const { resData } = props;
-  const {
-    name,
-    cloudinaryImageId,
-    costForTwo,
-    cuisines,
-    avgRatingString,
-    sla: { deliveryTime },
-  } = resData?.info;
-  return (
-    <div className="res-card">
-      <img
-        className="restaurant-image"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-        alt="res-logo"
-      />
-      <h3 className="restaurant-name">{name}</h3>
-      <h4 className="restaurant-rating">★ {avgRatingString}</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{deliveryTime} minutes</h4>
-      <p className="restaurant-description">{cuisines.join(", ")}</p>
-    </div>
-  );
-};
-
-const restaurantList = [
+export const restaurantList = [
   {
     info: {
       id: "643170",
@@ -1255,27 +1201,8 @@ const restaurantList = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="restaurant-container">
-        {restaurantList.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
+export const LOGO_URL =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnc3_BciLjUaES7Jn-n1fLVR7pS4cvNPyFhtKKwAnySQ&s";
 
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export const CDN_URL =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
