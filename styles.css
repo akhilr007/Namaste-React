@@ -57,9 +57,77 @@
   cursor: pointer;
 }
 
-.filter-btn {
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.shimmer-card {
+  width: 300px;
+  height: 200px;
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.shimmer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: linear-gradient(
+    -90deg,
+    #f0f0f0 25%,
+    transparent 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.filter {
+  display: flex;
+  justify-content: space-between; /* This will put the search-container in the middle and filter-btn to the right */
+  align-items: center; /* Vertically center the content */
+  padding: 10px; /* Add some padding for spacing */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.search-box {
+  width: 300px;
   padding: 5px;
-  margin: 15px;
+  margin-right: 10px; /* Add some spacing between search box and button */
+}
+
+.search-btn {
+  margin: 5px;
+  padding: 5px;
+}
+
+.search-btn:hover {
+  cursor: pointer;
+}
+
+.filter-btn {
+  margin: 5px;
+  padding: 5px;
 }
 
 .filter-btn:hover {
