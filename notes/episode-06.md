@@ -4,6 +4,9 @@
 - it will be called after the component is rendered.
 - `useEffect(()=>{}, [])`
 - in useEffect hook, first argument is callable function, second argument is dependency array.
+- if no dependency array is provided, then useEffect will be called at every component render.
+- if dependency array is empty, then useEffect will be called on only initial render.
+- if dependency array is `[some_variable]`, then useEffect will be called everytime some_variable is changed.
 
 ### conditional-rendering
 
