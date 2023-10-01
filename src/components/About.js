@@ -1,3 +1,5 @@
+import UserClass from "./UserClass";
+
 const About = () => {
   return (
     <>
@@ -63,6 +65,8 @@ const About = () => {
           companion. We look forward to serving you and helping you create
           delicious memories, one meal at a time.
         </p>
+
+        <UserClass name={"ankit"} />
       </div>
     </>
   );
